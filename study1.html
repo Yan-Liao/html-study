@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <style>
+            #header{
+                background-color:black;
+                color:white;
+                text-align:center;
+                padding:5px;
+            }
+            #nav {
+                line-height:70px;
+                background-color:#eeeeee;
+                height:400px;
+                width:180px;
+                float:left;
+                padding:20px;	      
+            }
+            #header2 {
+                width:1000px;
+                float:left;
+                padding:1px;	 	 
+            }
+            #table1 {
+                width:500px;
+                float:left;
+                padding:10px;	 	 
+            }
+            #table2 {
+                width:500px;
+                float:left;
+                padding:10px;	 	 
+            }
+            #footer {
+                background-color:black;
+                color:white;
+                clear:both;
+                text-align:center;
+                padding:5px;	 	 
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>
+                CAPSULE NET RESULT
+            </h1>
+        </div>
+        <div id="nav">
+            Sequence Feature<br/>
+            Motifs Feature<br/>
+            PC Feature<br/>
+            Second Struct Feature<br/>
+        </div>
+        <div id="header2">
+            <h2 style="text-align: center;color: cornflowerblue;">TABLE</h2>
+        </div>
+        <div id="table1">
+            <h4 style="color: rgb(195, 29, 154);">DEFFERENT FEATURES TABLE</h4>
+            <table border="1" cellpadding="10">
+                <tr>
+                    <th>type</th>
+                    <th>accuracy(%)</th>
+                    <th>Sn(%)</th>
+                    <th>Sp(%)</th>
+                    <th>F1(%)</th>
+                </tr>
+                <tr>
+                    <th>sequence</th>
+                    <td style="text-align: center;">90.4</td>
+                    <td style="text-align: center;">93.4</td>
+                    <td style="text-align: center;"><b>88.1</b></td>
+                    <td style="text-align: center;">90.7</td>
+                </tr>
+                <tr>
+                    <th>motifs</th>
+                    <td style="text-align: center;">87.9</td>
+                    <td style="text-align: center;">93.1</td>
+                    <td style="text-align: center;">84.4</td>
+                    <td style="text-align: center;">88.5</td>
+                </tr>
+                <tr>
+                    <th>PC</th>
+                    <td style="text-align: center;">88.8</td>
+                    <td style="text-align: center;"><b>96.7</b></td>
+                    <td style="text-align: center;">83.5</td>
+                    <td style="text-align: center;">89.6</td>
+                </tr>
+                <tr>
+                    <th>struct</th>
+                    <td style="text-align: center;">88.9</td>
+                    <td style="text-align: center;">95.5</td>
+                    <td style="text-align: center;">84.4</td>
+                    <td style="text-align: center;">89.6</td>
+                </tr>
+                <tr>
+                    <th>combine</th>
+                    <td style="text-align: center;"><b>90.5</b></td>
+                    <td style="text-align: center;">93.9</td>
+                    <td style="text-align: center;">87.9</td>
+                    <td style="text-align: center;"><b>90.8</b></td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="table2">
+            <h4 style="color: rgb(195, 29, 154);">DEFFERENT TOOLS TABLE</h4>
+            <table border="1" cellpadding="10">
+                <tr>
+                    <th>TOOL</th>
+                    <th>Sn(%)</th>
+                    <th>Sp(%)</th>
+                    <th>F1(%)</th>
+                </tr>
+                <tr>
+                    <th>lncPro</th>
+                    <td style="text-align: center;">80.36</td>
+                    <td style="text-align: center;">52.26</td>
+                    <td style="text-align: center;">63.26</td>
+                </tr>
+                <tr>
+                    <th>RPISeq(RF)</th>
+                    <td style="text-align: center;"><b>99.16</b></td>
+                    <td style="text-align: center;">50.16</td>
+                    <td style="text-align: center;">66.56</td>
+                <tr>
+                    <th>IPMiner</th>
+                    <td style="text-align: center;">89.86</td>
+                    <td style="text-align: center;">85.66</td>
+                    <td style="text-align: center;">87.66</td>
+                </tr>
+                <tr>
+                    <th>lncADeep</th>
+                    <td style="text-align: center;">97.06</td>
+                    <td style="text-align: center;">85.46</td>
+                    <td style="text-align: center;">90.86</td>
+                </tr>
+                <tr>
+                    <th>lncProCAPS</th>
+                    <td style="text-align: center;">93.98</td>
+                    <td style="text-align: center;"><b>87.97</b></td>
+                    <td style="text-align: center;"><b>90.88</b></td>
+                </tr>
+            </table>
+        </div>
+        <div id="footer">
+            <p><a href="https://github.com/Yan-Liao/lncProCAPS.git" style="color: cornsilk;">Download "lncProCAPS"</a></p>
+        </div>
+    </body>
+</html>

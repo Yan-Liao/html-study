@@ -1,0 +1,50 @@
+HTML 标题（Heading）是通过 <h1> - <h6> 等标签进行定义的。  （自带上下空行）
+
+HTML 段落是通过 <p> 标签进行定义的。   （自带上下空行）
+
+HTML 链接是通过 <a> 标签进行定义的。 <a href="http://www.w3school.com.cn/" target="_blank>This is a link</a>    target 属性设置为 "_blank"，该链接会在新窗口中打开。
+<a>叫做锚，可以给它起名<a name="C4">Chapter 4</a>   之后<a href="#C4">查看 Chapter 4。</a>就能跳转到它
+
+HTML 图像是通过 <img> 标签进行定义的。<img src="w3school.jpg" width="104" height="142" />
+
+HTML 表格是通过 <table> 标签进行定义的。
+
+<pre>预格式文本（编程中怎么写，就什么格式）
+
+表格：
+每个表格由 table 标签开始。
+每个表格行由 tr 标签开始。
+每个表格数据由 td 标签开始。
+<h4>两行三列：</h4>
+<table border="1">
+<tr>
+  <td>100</td>
+  <td>200</td>
+  <td>300</td>
+</tr>
+<tr>
+  <td>400</td>
+  <td>500</td>
+  <td>600</td>
+</tr>
+</table>
+
+<hr /> 标签在 HTML 页面中创建水平线。
+<br />换行
+
+style:
+background-color ，color font-family、 font-size   text-align属性分别定义元素中  背景颜色  颜色 文本的字体系列、字体尺寸  对齐方式
+<p style="font-family:arial;color:red;font-size:20px;">A paragraph.</p>
+
+
+格式化（计算机代码也有对应格式，更多格式在已保存网页中）
+<b>定义粗体文本。
+<big>定义大号字。
+<em>定义着重文字。
+<i>定义斜体字。
+<small>定义小号字。
+<strong>定义加重语气。
+<sub>定义下标字。
+<sup>定义上标字。
+<ins>定义插入字。
+<del>定义删除字。

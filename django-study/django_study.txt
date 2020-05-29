@@ -1,0 +1,31 @@
+1.创建工程：django-admin startproject HelloWorld
+2.创建应用：到项目根目录下 python manage.py startapp xxx
+3.在setting.py里添加app名 
+4.配置URL：在app里新建一个url文件，并配置总url文件与app的url文件   /blog/index/
+5.运行网站：python manage.py runserver
+
+
+6.加入templates(html) app目录下创建templates文件夹,再创一个与app同名的文件夹 将html文件放入
+7.views.py中 return render(request, 'app名/index.html', {'a': 'xixixi'})
+
+
+8.在app的models里写class，一个class就是一个数据表
+       class Article(models.Model):
+    	title = models.CharField(max_length=32, default='xixixi')
+    	content = models.TextField(null=True)
+9.python manage.py makemigrations app名(可选)  在app/migrations目录下生成移植文件
+10.python manage.py migrate 进行数据迁移
+（11.）python manage.py sqlmigrate app名 文件id    查看SQL，文件id为app/migrations目录里的id
+用类产生成员有两种方法（用模板产生网页）1.用数据库软件写；2.在网站管理页面写
+12.在app/views.py里改  
+	article = models.Article.objects.get(pk=1)
+    	return render(request, 'blog/index.html', {'article': article})
+13.在html文件里调用 {{article.title}}
+
+
+14.创建网站管理账户：python manage.py createsuperuser
+15.在app的 admin.py里，添加数据表 admin.site.register(models.Article)
+（16.）改admin的字，在setting里 改'ch-hans'
+17.想让管理网站的类成员显示正确名称，在app的models里，在类里加方法：    
+def __str__(self):
+        return Article.title

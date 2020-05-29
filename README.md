@@ -1,1 +1,1 @@
-Used to record HTML learning files
+Used to record web-design learning files

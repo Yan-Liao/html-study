@@ -7,10 +7,10 @@
 <body>
 <h2>My Blog List</h2>
 {% for article in articles %}
-    <a href="">{{article.title}}</a>
+    <a href="{% url 'blog:article_page' article.id %}">{{article.title}}</a>
     <br/>
 {% endfor %}
 <br/>
-<a href="">Create New Blog</a>
+<a href="{% url 'blog:edit_page' 0 %}">Create New Blog</a>
 </body>
 </html>

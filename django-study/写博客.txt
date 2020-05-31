@@ -6,3 +6,52 @@
     <a href="">{{article.title}}</a>
     <br/>
 {% endfor %}
+
+
+3.做文章，先在views.py里，添加响应，因为文章有多个，因此相应的参数多传一个article_id
+def article_page(request, article_id):
+    article = models.Article.objects.get(pk=article_id)
+    return render(request, 'blog/article_page.html', {'article': article})
+4.加urls（app里的）path('article/<int:article_id>', views.article_page),
+5.写html文件
+
+
+6.配置跳转链接  首先给跳转路径上的app命名，并给跳转的url命名
+path里带include的    在include里加namespace, 并且还要带上app的名字，和include的url组成一个元组    path('blog/', include(('blog.urls','blog'),namespace='blog'))
+其他的在path函数里加name   path('article/<int:article_id>', views.article_page, name='article_page'),
+7.在html中用 {% url 'blog:article_page' article.id %} 代表地址
+<a href="{% url 'blog:article_page' article.id %}">{{article.title}}</a>
+
+
+8.创建新博客页（网页中有提交，需要些form的action）  首先写出带提交的html网页 其中<form action="" method="post" or "get">
+post处理短数据，以及提交的东西中带有<a>不行  若用到post 要在form下加上 {% csrf_token %}
+9.写出该网页的响应，配置好url
+10.写出action的响应，配置好url  接收参数用  title = request.POST['title']  或  request.POST.get('title', '无')  其中参数以字典形式存在在request中
+def edit_action(request):
+    title = request.POST.get('title', '无')
+    content = request.POST.get('content', '无')
+    models.Article.objects.create(title=title, content=content)
+    articles = models.Article.objects.all()
+    return render(request, 'blog/index.html', {'articles': articles})
+11.在html里添加上写好的url  {% url 'blog:edit_action' %}
+
+
+12.修改博客内容  先改views.py中的edit_page函数 传入article_id 
+def edit_page(request, article_id):
+    if str(article_id) == '0':
+        return render(request, 'blog/edit_page.html')
+    article = models.Article.objects.get(pk=article_id)
+    return render(request, 'blog/edit_page.html', {'article': article})
+13.url也要做相应调整 加上/<int:article_id>/
+14.html里跳转部分，把article_id 加上 （或者直接写0）
+15.在edit_page的html里，添加判断
+{% if article %}  各个内容加上原来的初值  value="{{ article.title }}
+并且加上<input type="hidden" name="article_id" value="{{ article.id }}">
+{% else %} 
+<input type="hidden" name="article_id" value="0">
+{% endif %}
+16.改响应里的action 判断request.POST.get('article_id', '0') 为0直接创建，不为0则修改：
+article = models.Article.objects.get(pk=article_id)
+article.title = title
+article.content = content
+article.save()

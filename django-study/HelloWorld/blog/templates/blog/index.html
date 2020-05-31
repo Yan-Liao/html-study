@@ -5,7 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<p>{{article.title}}</p>
-<p>{{article.content}}</p>
+<h2>My Blog List</h2>
+{% for article in articles %}
+    <a href="">{{article.title}}</a>
+    <br/>
+{% endfor %}
+<br/>
+<a href="">Create New Blog</a>
 </body>
 </html>

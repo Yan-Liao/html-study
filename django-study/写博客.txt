@@ -1,0 +1,8 @@
+接"django_study"
+1.做目录，将views.py中的articles = models.Article.objects.get(pk=1)改为articles = models.Article.objects.all()
+这样articles存了所有article对象，可遍历（用for）
+2.改html  for语句的用法
+{% for article in articles %}
+    <a href="">{{article.title}}</a>
+    <br/>
+{% endfor %}

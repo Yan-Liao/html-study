@@ -16,7 +16,7 @@
 9.python manage.py makemigrations app名(可选)  在app/migrations目录下生成移植文件
 10.python manage.py migrate 进行数据迁移
 （11.）python manage.py sqlmigrate app名 文件id    查看SQL，文件id为app/migrations目录里的id
-用类产生成员有两种方法（用模板产生网页）1.用数据库软件写；2.在网站管理页面写
+更改数据库内容的方法：1.用数据库软件写；2.在网站管理页面写
 12.在app/views.py里改  
 	article = models.Article.objects.get(pk=1)
     	return render(request, 'blog/index.html', {'article': article})

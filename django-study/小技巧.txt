@@ -1,0 +1,19 @@
+1.Django中带有过滤器（一种处理变量的函数，类似于python里的len）
+使用方法：{{ value | filter }}   例如：{{ article.id | defult:'0' }} 作用是当article.id不存在时，返回0（不然Django默认返回空字符串）
+
+2.使用 python manage.py shell 可以进入Django的调试界面，测试语句的效果
+
+3.admin (主要用来修改数据库，很方便)
+显示更多东西 需要在admin.py中创建admin的配置类
+class ArticleAdmin(admin.ModelAdmin):
+	list_display = ('title', 'content')
+	list_filter = ('pub_time',)         #注意，元组一个元素时定要加上，
+注册时，绑定配置类 admin.site.register(Article, ArticleAdmin)
+
+
+
+
+4.修改models时，注意一定要进行数据移植的两步
+python manage.py makemigrations app名(可选，不写则为全移植)  在app/migrations目录下生成移植文件
+python manage.py migrate 
+model中添加时间：pub_time = models.DateTimeField(auto_now=True) 带这个参数则不可修改，是创建时的时间

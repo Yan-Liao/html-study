@@ -24,7 +24,7 @@ def edit_action(request):
     title = request.POST.get('title', '无')
     content = request.POST.get('content', '无')
     article_id = request.POST.get('article_id', '0')
-    if article_id == 0:
+    if article_id == '0':
         models.Article.objects.create(title=title, content=content)
         articles = models.Article.objects.all()
         return render(request, 'blog/index.html', {'articles': articles})
